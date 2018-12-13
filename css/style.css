@@ -15,10 +15,20 @@ body {
     background-color: black;
   }
   header{
-    display: flex;
+    display: grid;
     justify-content: space-between;
+    grid-template-columns: auto 20%;
   }
-  
+ 
+  nav ul{
+    text-align: right;
+    list-style-type: none;
+    display: grid;
+    grid-column-end: auto; 
+    grid-template-columns: auto auto auto;
+  }
+ 
+
   section {
     margin: 5px;
     padding-right: 10%;
@@ -26,41 +36,26 @@ body {
     padding-top:10px;
     padding-bottom:10px;
     background-color: lightgrey;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
     
   }
-  
   section>h2{
-    flex: 100%;
+    grid-column: 1/4;
   }
   section>div{
-    width: 33.33%;
-    padding: 5px;
-  }
-  article {
-    padding: 10px;
     background-color: white;
   }
-  nav{
-    padding-top:10px;
-    padding-bottom:10px;
+  article{
+    padding-left: 10px;
+    padding-left: 10px;
   }
-  nav ul {
-    padding: 0;
-  }
-  nav ul li {
-    display: inline;
-    margin: 5px;
-  }
+ 
+  
   @media only screen and (max-width:900px){
-    nav ul li{
-      display: block;
-    }
-    header{
-      flex-direction: column;
-      text-align: center;
-    }
+    
     section>div{
       width: 50%;
     }
@@ -71,13 +66,7 @@ body {
     }
   }
   @media only screen and (max-width:765px){
-    nav ul li{
-      display: block;
-    }
-    header{
-      flex-direction: column;
-      text-align: center;
-    }
+   
     section>div{
       width: 100%;
     }
